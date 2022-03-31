@@ -25,6 +25,8 @@ public class UserService {
 
 	/**
 	 * This service is repsonsible to add User
+	 * 
+	 * @param user Object
 	 *
 	 */
 
@@ -33,11 +35,13 @@ public class UserService {
 		return userRepository.save(user) != null;
 
 	}
-	
-	
+
+	/**
+	 * This Service is responsible for login @ userId Password
+	 */
 	@Transactional
-	public List<User> login(String user_id,String password) {
-		return userRepository.login(user_id,password);
+	public List<User> login(String user_id, String password) {
+		return userRepository.login(user_id, password);
 	}
 
 }

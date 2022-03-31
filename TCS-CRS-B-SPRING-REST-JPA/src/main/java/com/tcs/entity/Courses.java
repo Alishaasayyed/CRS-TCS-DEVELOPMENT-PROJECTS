@@ -11,8 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * @author springuser01
- *
+ * @author springuser01 Courses Entity
  */
 @Entity
 @Table(name = "courses")

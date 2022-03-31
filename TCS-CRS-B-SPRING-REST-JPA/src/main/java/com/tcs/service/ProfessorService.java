@@ -31,6 +31,10 @@ public class ProfessorService {
 	@Autowired
 	CourseRegisrationRepository courseRegisrationRepository;
 
+	/**
+	 * This Service is responsible to add professor
+	 * 
+	 */
 	@Transactional
 	public boolean addProfessor(Professor professor) {
 		System.out.println(professor);

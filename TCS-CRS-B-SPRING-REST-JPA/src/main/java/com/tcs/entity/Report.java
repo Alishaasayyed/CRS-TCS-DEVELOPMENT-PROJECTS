@@ -16,7 +16,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
- * @author springuser01
+ * @author springuser01 Report Entity
  *
  */
 @Entity

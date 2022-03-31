@@ -21,6 +21,11 @@ public class ReportServices {
 	@Autowired
 	ReportRepository reportRepository;
 
+	/**
+	 * This Service is responsible to get report card
+	 * 
+	 * @param student id
+	 */
 	@Transactional
 	public List<Report> getReportById(Integer id) {
 		return (List<Report>) reportRepository.getReport(id);

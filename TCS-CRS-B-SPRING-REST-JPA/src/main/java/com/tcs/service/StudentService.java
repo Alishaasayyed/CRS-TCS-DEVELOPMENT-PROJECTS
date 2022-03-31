@@ -21,14 +21,21 @@ public class StudentService {
 	@Autowired
 	StudentRepository studentRepository;
 
-	
-	
+	/**
+	 * This Service is responsible to approved student
+	 * 
+	 * @param student id
+	 */
 	@Transactional
 	public int updateApproval(Integer id) {
-		 return studentRepository.updateStudentApproval(id);
+		return studentRepository.updateStudentApproval(id);
 	}
-	
 
+	/**
+	 * This Service is responsible to register student
+	 * 
+	 * @param Student Object
+	 */
 	@Transactional
 	public boolean registerStudent(Student student) {
 		System.out.println(studentRepository.save(student));

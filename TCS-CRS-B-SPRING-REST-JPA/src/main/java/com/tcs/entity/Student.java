@@ -13,7 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * @author springuser01
+ * @author springuser01 Student Entity
  *
  */
 @Entity
@@ -136,7 +136,7 @@ public class Student {
 	@Override
 	public String toString() {
 		return "Student{" + "id=" + id + ", name=" + name + ",email= " + email + ",phoneNumber= " + phoneNumber
-				+ ",dob= " + dob +",isStudApproved= "+isStudApproved+ " ,timestamp='" + timestamp + '\'' + '}';
+				+ ",dob= " + dob + ",isStudApproved= " + isStudApproved + " ,timestamp='" + timestamp + '\'' + '}';
 	}
 
 }

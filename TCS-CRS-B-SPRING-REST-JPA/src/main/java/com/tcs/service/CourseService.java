@@ -21,7 +21,10 @@ public class CourseService {
 	@Autowired
 	CoursesRepository coursesRepository;
 
-	
+	/**
+	 * This Service is responsible to add courses
+	 * 
+	 */
 	@Transactional
 	public boolean addCourse(Courses course) {
 		System.out.println(course);
@@ -30,13 +33,22 @@ public class CourseService {
 
 	}
 
+	/**
+	 * This Service is responsible to fetch all courses
+	 * 
+	 */
+
 	@Transactional
 	public List<Courses> getAllCourses() {
 		return (List<Courses>) coursesRepository.findAll();
 	}
 
+	/**
+	 * This Service is responsible to delete courses
+	 * 
+	 */
 	@Transactional
-	public void deleteCourse(Integer personId) {
-		coursesRepository.deleteById(personId);
+	public void deleteCourse(Integer id) {
+		coursesRepository.deleteById(id);
 	}
 }
