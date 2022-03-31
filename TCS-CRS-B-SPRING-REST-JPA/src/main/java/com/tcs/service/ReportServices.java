@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.tcs.entity.Report;
 import com.tcs.repository.ReportRepository;
 
-
 /**
  * @author springuser01
  *
@@ -19,12 +18,11 @@ import com.tcs.repository.ReportRepository;
 @Service
 public class ReportServices {
 
-@Autowired
-ReportRepository reportRepository;
+	@Autowired
+	ReportRepository reportRepository;
 
-@Transactional
-public List<Report> getReportById(Integer id) {
-	 return (List<Report>) reportRepository.getReport(id);
+	@Transactional
+	public List<Report> getReportById(Integer id) {
+		return (List<Report>) reportRepository.getReport(id);
+	}
 }
-}
-

@@ -24,10 +24,6 @@ import javax.transaction.Transactional;
 @Repository
 public interface StudentRepository extends CrudRepository<Student, Integer> {
 
-	// This PersonRepository inharite the CurdRepository in which we can implement
-	// the various method save() findOne() count() delete() deleteAll()
-	//List<Student> findByFirstName(String firstName);
-	//@Transactional
     @Modifying
     @Query(value ="update student set is_stud_approved =1 where id=?",nativeQuery = true)
      int updateStudentApproval( int id );

@@ -21,7 +21,6 @@ import com.tcs.entity.Courses;
 import com.tcs.entity.Professor;
 import com.tcs.entity.Report;
 import com.tcs.entity.Student;
-import com.tcs.repository.StudentRepository;
 import com.tcs.service.CourseService;
 import com.tcs.service.ProfessorService;
 import com.tcs.service.ReportServices;
@@ -35,11 +34,10 @@ import com.tcs.service.StudentService;
 @RestController
 public class AdminController {
 	private static final Logger log = LoggerFactory.getLogger(AdminController.class);
-	
-	
+
 	@Autowired
 	StudentService studentService;
-	
+
 	@Autowired
 	CourseService courseService;
 	@Autowired
@@ -49,7 +47,7 @@ public class AdminController {
 
 	@RequestMapping(value = "/admin/approved/student/{id}", method = RequestMethod.PUT)
 	public HttpStatus updateApproval(@PathVariable Integer id) {
-		return studentService.updateApproval(id) != 0? HttpStatus.CREATED : HttpStatus.BAD_REQUEST;
+		return studentService.updateApproval(id) != 0 ? HttpStatus.CREATED : HttpStatus.BAD_REQUEST;
 
 	}
 
@@ -59,7 +57,7 @@ public class AdminController {
 		log.info(courses.toString());
 		return courseService.addCourse(courses) ? HttpStatus.CREATED : HttpStatus.BAD_REQUEST;
 	}
-	
+
 	@RequestMapping(value = "/admin/report/{id}", method = RequestMethod.GET)
 	public @ResponseBody List<Report> getReportById(@PathVariable("id") Integer id) {
 		return (List<Report>) reportService.getReportById(id);
@@ -75,7 +73,7 @@ public class AdminController {
 		courseService.deleteCourse(id);
 		return HttpStatus.NO_CONTENT;
 	}
-	
+
 	@RequestMapping(value = "/admin/professor", method = RequestMethod.POST)
 	@ResponseBody
 	public HttpStatus addProfessor(@RequestBody Professor professor) {
