@@ -37,7 +37,7 @@ public class UserService {
 	
 	@Transactional
 	public List<User> login(String user_id,String password) {
-		return (List<User>) userRepository.login(user_id,password);
+		return userRepository.login(user_id,password);
 	}
 
 }

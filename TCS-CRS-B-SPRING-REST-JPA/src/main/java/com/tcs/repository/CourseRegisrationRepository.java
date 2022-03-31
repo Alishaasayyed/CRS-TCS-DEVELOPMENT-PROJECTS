@@ -21,7 +21,7 @@ public interface CourseRegisrationRepository extends CrudRepository<CourseRegisr
 	 * This query is responsible fetch student for professor
 	 * 
 	 */
-	@Query(value = "select student_id from course_registration where professor_id=?", nativeQuery = true)
+	@Query(value = "select * from course_registration where professor_id=?", nativeQuery = true)
 	List<CourseRegisration> getStudentList(Integer id);
 
 }

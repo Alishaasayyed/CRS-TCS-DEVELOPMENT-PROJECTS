@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -50,10 +51,10 @@ public class UserController {
 	 */
 
 	@RequestMapping(value = "/login/user/{user_id}/{password}", method = RequestMethod.GET)
-	public @ResponseBody List<User> login(@PathVariable("user_id") String user_id,
+	public ResponseEntity<String>  login(@PathVariable("user_id") String user_id,
 			@PathVariable("password") String password) {
 		userService.login(user_id, password);
-		return (List<User>) ResponseEntity.ok(HttpStatus.OK);
+		return new ResponseEntity<String>("User Login Successfully",HttpStatus.OK);
 
 	}
 }
